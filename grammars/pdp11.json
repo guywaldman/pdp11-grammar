@@ -10,7 +10,7 @@
     },
     {
       "comment": "LC",
-      "match": "\\b\\.\\b",
+      "match": "[\\b\\s](\\.)[\\b\\s]",
       "name": "keyword.other.pdp11"
     },
     {
@@ -20,8 +20,26 @@
     },
     {
       "comment": "Memory allocation",
-      "match": "(?i-)(.(?:blkw|blkb|byte|word|ascii))(?-i)",
-      "name": "storage.modifier.pdp11"
+      "begin": "(?i-)(\\w*:)?\\s*?(.(?:blkw|blkb|byte|word|ascii))(?-i)",
+      "beginCaptures": {
+        "1": {
+          "name": "variable.language.pdp11"
+        },
+        "2": {
+          "name": "storage.modifier.pdp11"
+        }
+      },
+      "end": "[\\n$]",
+      "patterns": [
+        {
+          "match": "\\b(\\w+)\\b",
+          "name": "constant.other.pdp11"
+        },
+        {
+          "match": "\\s+(#'\\w*)\\b",
+          "name": "constant.other.pdp11"
+        }
+      ]
     },
     {
       "comment": "Label",
@@ -84,12 +102,8 @@
     },
     {
       "comment": "ASCII character",
-      "match": "\\b(#'\\w+)\\b",
-      "captures": {
-        "1": {
-          "name": "variable.other.pdp11"
-        }
-      }
+      "match": "(?i-)[\\s\\b^](#'[\\w\\d]+)(?-i)",
+      "name": "variable.other.pdp11"
     },
     {
       "comment": "Commands for words/bytes",
