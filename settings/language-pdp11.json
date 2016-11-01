@@ -2,7 +2,7 @@
   ".source.pdp11": {
     "editor": {
       "commentStart": "; ",
-      "increaseIndentPattern": "^\\s*([a-zA-z]\\w*):.*$"
+      "increaseIndentPattern": "^\\s*([a-zA-z]\\w*):(?!.*\\.(?:word|byte|ascii).*).*$"
     }
   }
 }
