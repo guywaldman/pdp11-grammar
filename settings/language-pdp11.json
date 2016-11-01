@@ -1,0 +1,8 @@
+{
+  ".source.pdp11": {
+    "editor": {
+      "commentStart": "; ",
+      "increaseIndentPattern": "^\\s*(?i-)([a-zA-z]\\w*)(?-i):\\s*$"
+    }
+  }
+}

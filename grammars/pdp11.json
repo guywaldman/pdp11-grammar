@@ -1,0 +1,122 @@
+{
+  "name": "PDP-11",
+  "scopeName": "source.pdp11",
+  "fileTypes": ["s11"],
+  "patterns": [
+    {
+      "comment": "Line Comments -- Asterisk only works at beginning of line",
+      "match": "((;|^\\*).*$)",
+      "name": "comment.line.pdp11"
+    },
+    {
+      "comment": "LC",
+      "match": "\\b\\.\\b",
+      "name": "keyword.other.pdp11"
+    },
+    {
+      "comment": "Keywords (torg)",
+      "match": "(torg)",
+      "name": "keyword.other.pdp11"
+    },
+    {
+      "comment": "Memory allocation",
+      "match": "(?i-)(.(?:blkw|blkb|byte|word|ascii))(?-i)",
+      "name": "storage.modifier.pdp11"
+    },
+    {
+      "comment": "Label",
+      "match": "(?i-)\\s*([a-zA-z]\\w*)(:)\\s*(?-i)",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.tag"
+        },
+        "2": {
+          "name": "keyword.operator.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "Constant",
+      "match": "^(?i-)\\s*((?:[\\.a-zA-z]\\w*)\\s*=\\s*(?:[\\s\\w#\\+\\-])+)\\s*(?-i)$",
+      "captures": {
+        "1": {
+          "name": "constant.numeric.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "Registers",
+      "match": "(?i-)(r[0-6]|sp|pc)(?-i)",
+      "captures": {
+        "1": {
+          "name": "constant.language.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "Absolute addressing (#)",
+      "match": "#\\d+",
+      "name": "variable.language.pdp11"
+    },
+    {
+      "comment": "Absolute addressing with number (#)",
+      "match": "(?i-)(@)?(#(?:[a-zA-z]\\w*))(?-i)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator.pdp11"
+        },
+        "2": {
+          "name": "entity.name.section.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "Absolute Addressing with label",
+      "match": "(@?)(#\\d+)",
+      "captures": {
+        "1": {
+          "name": "keyword.operator.pdp11"
+        },
+        "2": {
+          "name": "variable.other.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "ASCII character",
+      "match": "\\b(#'\\w+)\\b",
+      "captures": {
+        "1": {
+          "name": "variable.other.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "Commands for words/bytes",
+      "match": "(?i-)\\b((?:mov|clr|mul|cmp|bit|tst|inc|dec|cmp|asr|asl)b?)\\b(?-i)",
+      "captures": {
+        "1": {
+          "name": "support.function.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "Other Commands",
+      "match": "(?i-)\\b(sxt|bic|bis|add|xor|div|ash|ashc|fadd|fsub|fmul|fdiv)\\b(?-i)",
+      "captures": {
+        "1": {
+          "name": "support.function.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "General commands and branches",
+      "match": "(?i-)\\b(jsr|jmp|br|ble|bhi|beq|bnq|blt|bgt|bge|rts|rti|halt|wait|bpt|iot|reset|rtt)\\b(?-i)",
+      "captures": {
+        "1": {
+          "name": "support.function.pdp11"
+        }
+      }
+    }
+  ]
+}

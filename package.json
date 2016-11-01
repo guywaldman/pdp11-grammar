@@ -1,0 +1,16 @@
+{
+    "name": "grammar-pdp11",
+    "main": "./lib/grammar-pdp11",
+    "version": "0.0.3",
+    "description": "A package for the PDP-11 Assembly language",
+    "keywords": [],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guywald1/grammar-pdp11"
+    },
+    "license": "MIT",
+    "engines": {
+        "atom": "*"
+    },
+    "dependencies": {}
+}
