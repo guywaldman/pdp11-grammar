@@ -1,5 +1,3 @@
-# grammar-pdp11 package
+# PDP-11 for Atom
 
-A short description of your package.
-
-![A screenshot of your package](https://f.cloud.github.com/assets/69169/2290250/c35d867a-a017-11e3-86be-cd7c5bf3ff9b.gif)
+A grammar and syntax package for the PDP-11 Assembly syntax.

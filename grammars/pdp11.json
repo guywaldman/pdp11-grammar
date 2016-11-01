@@ -110,8 +110,17 @@
       }
     },
     {
-      "comment": "General commands and branches",
-      "match": "(?i-)\\b(jsr|jmp|br|ble|bhi|beq|bnq|blt|bgt|bge|rts|rti|halt|wait|bpt|iot|reset|rtt)\\b(?-i)",
+      "comment": "Branches",
+      "match": "(?i-)\\b(br|ble|bhi|beq|bnq|blt|bgt|bge)\\b(?-i)",
+      "captures": {
+        "1": {
+          "name": "support.function.pdp11"
+        }
+      }
+    },
+    {
+      "comment": "General commands",
+      "match": "(?i-)\\b(jsr|jmp|rts|rti|halt|wait|bpt|iot|reset|rtt)\\b(?-i)",
       "captures": {
         "1": {
           "name": "support.function.pdp11"
