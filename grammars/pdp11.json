@@ -5,7 +5,7 @@
   "patterns": [
     {
       "comment": "Line Comments -- Asterisk only works at beginning of line",
-      "match": "((;|^\\*).*$)",
+      "match": ";.*$",
       "name": "comment.line.pdp11"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "comment": "Constant",
-      "match": "^(?i-)\\s*((?:[\\.a-zA-z]\\w*)\\s*=\\s*(?:[\\s\\w#\\+\\-])+)\\s*(?-i)$",
+      "match": "^(?i-)\\s*([\\.a-zA-z\\w]+\\s*=\\s*[\\s\\w#\\+\\-]+)(?-i)",
       "captures": {
         "1": {
           "name": "constant.numeric.pdp11"
