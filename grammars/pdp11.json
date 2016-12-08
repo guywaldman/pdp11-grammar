@@ -20,7 +20,7 @@
     },
     {
       "comment": "Memory allocation",
-      "begin": "(?i-)(\\w*:)?\\s*?(.(?:blkw|blkb|byte|word|ascii))(?-i)",
+      "begin": "(?i-)(\\w*:)?\\s*?(.(?:blkw|blkb|byte|word|ascii|even))(?-i)",
       "beginCaptures": {
         "1": {
           "name": "variable.language.pdp11"
@@ -107,7 +107,7 @@
     },
     {
       "comment": "Commands for words/bytes",
-      "match": "(?i-)\\b((?:mov|clr|mul|cmp|bit|tst|inc|dec|cmp|asr|asl)b?)\\b(?-i)",
+      "match": "(?i-)\\b((?:mov|clr|mul|cmp|bit|bic|bis|tst|inc|dec|cmp|asr|asl|adc)b?)\\b(?-i)",
       "captures": {
         "1": {
           "name": "support.function.pdp11"
@@ -116,7 +116,7 @@
     },
     {
       "comment": "Other Commands",
-      "match": "(?i-)\\b(sxt|bic|bis|add|xor|div|ash|ashc|fadd|fsub|fmul|fdiv)\\b(?-i)",
+      "match": "(?i-)\\b(sxt|add|xor|div|ash|ashc|fadd|fsub|fmul|fdiv|sub)\\b(?-i)",
       "captures": {
         "1": {
           "name": "support.function.pdp11"
@@ -125,7 +125,7 @@
     },
     {
       "comment": "Branches",
-      "match": "(?i-)\\b(br|ble|bhi|beq|bnq|blt|bgt|bge)\\b(?-i)",
+      "match": "(?i-)\\b(br|ble|bhi|beq|bne|bnq|blt|bgt|bge|sob)\\b(?-i)",
       "captures": {
         "1": {
           "name": "support.function.pdp11"
